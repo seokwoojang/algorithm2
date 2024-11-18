@@ -23,6 +23,7 @@ void unionSets(int a, int b) {
 }
 
 int main() {
+    //입출력 속도 최적화
     ios::sync_with_stdio(false);
     cin.tie(0);
 
