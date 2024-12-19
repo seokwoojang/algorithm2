@@ -11,7 +11,7 @@ def find(i):
         parent[i] = find(parent[i]) # 경로 압축
     return parent[i]
 
-def union(a,b):
+def union(a, b):
     a = find(a)
     b = find(b)
     if a < b:
@@ -25,7 +25,7 @@ for r in range(m):
     if o == 0: # 합집합 연산
         if a == b:
             continue
-        union(a,b)
+        union(a, b)
     else: # 같은 집합인지 확인
         if find(a) == find(b):
             print("YES")

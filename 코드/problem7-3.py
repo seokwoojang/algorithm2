@@ -18,4 +18,4 @@ def solution(n, computers):
 
 computers1 = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
 computers2 = [[1, 1, 0], [1, 1, 1], [0, 1, 1]]
-print(solution(3, computers2))
+print(solution(3, computers1))

@@ -3,14 +3,15 @@ from heapq import heappop, heappush
 def solution(N, road, K):
     answer = 0
 
-    g = [[] for _ in range(N+1)]
-    
-    for u, v, w in road:
-        g[u].append((v, w))
-        g[v].append((u, w))
+    g = [[] for _ in range(N + 1)]
+
+    for a, b, w in road:
+        g[a].append((b, w))
+        g[b].append((a, w))
     
     distance = [float('inf')] * (N + 1)
     distance[1] = 0
+
     h = [(1, 0)]
 
     while h:
@@ -24,8 +25,8 @@ def solution(N, road, K):
             if new_cost < distance[next_town]:
                 distance[next_town] = new_cost
                 heappush(h, (next_town, new_cost))
-
-    for i in range(1, N+1):
+    
+    for i in range(1, N + 1):
         if distance[i] <= K:
             answer += 1
 

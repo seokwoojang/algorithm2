@@ -1,14 +1,9 @@
 def solution(nums):
-    answer = 0
-    r = []
-    for n in nums:
-        if n in r:
-            continue
-        else:
-            if len(r) < len(nums)/2:
-                r.append(n)
-                answer += 1
-    return answer
+    num_set = set(nums)
+    n = len(nums)
+    k = n // 2
+
+    return min(k, len(num_set))
 
 nums1 = [3,1,2,3]
 print(solution(nums1))

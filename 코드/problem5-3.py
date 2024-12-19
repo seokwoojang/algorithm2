@@ -1,22 +1,24 @@
 
 def solution(cards1, cards2, goal):
     answer = ''
-    result = []
 
     a,b,g = 0, 0, 0
 
-    for g in range(len(goal)):
-        if a < len(cards1) and cards1[a] == goal[g]:
-            result.append(cards1[a])
+    while True:
+        if len(cards1) > a and cards1[a] == goal[g]:
             a += 1
-        elif b < len(cards2) and cards2[b] == goal[g]:
-            result.append(cards2[b])
+            g += 1
+        elif len(cards2) > b and cards2[b] == goal[g]:
             b += 1
+            g += 1
         else:
-            answer = 'No'
-            return answer
+            break
+    
+    if g >= len(goal):
+        answer = "Yes"
+    else:
+        answer = "No"
 
-    answer = 'Yes'
     return answer
 
 # cards1 = ["i", "drink", "water"]
@@ -26,4 +28,4 @@ cards1 = ["show", "lot", "please", "the", "me"]
 cards2 = ["money"]
 
 goal = ["show", "me", "the", "money"]
-solution(cards1, cards2, goal)
+print(solution(cards1, cards2, goal))
